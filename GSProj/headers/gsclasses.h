@@ -18,7 +18,10 @@ using namespace GS_Structs;
     string verification = "\0";
     int totalCmds = 9;
     vector<string> cmdList(totalCmds);
-
+    
+    int registered = 1;    
+    vector<string> userList(registered);
+    
 // build function prototypes using the global variables
 
 // Global variables must be declared as both Global and within class members to be accessed by class members
@@ -29,24 +32,16 @@ public:
     };*/
     
 class FileObj{
-private:
-    int reg = 0;
-    
-public:    
-    vector<string> userList;
-    int registered = 0;    
+public:
     
 int InLogFunc(){
-FileObj::CommandLine ComLine;
-FileObj UsrList;
-FileObj::Administration Admin_Action;
+    FileObj::CommandLine ComLine;
+    FileObj UsrList;
+    FileObj::Administration Admin_Action;
 
 	string* loginPoint = &initLogin;
 	string openMeth = "usrfiles/" + *loginPoint;
 	string* openFile = &openMeth;
-    
-    cin >> initLogin;
-    cout << "entered" << endl;
     
     if (initLogin == "new") {
 		Admin_Action.MakeUser();
@@ -65,8 +60,8 @@ FileObj::Administration Admin_Action;
 		} while (counter <= 2);
 	}
 	else {
-		for (int r = 0; r < UsrList.registered; ++r) {
-			if (initLogin == UsrList.userList[r]) {
+		for (int r = 0; r < registered; ++r) {
+			if (initLogin == userList[r]) {
 				registeredUser = 1;
 				ComLine.Verify();
 				break;
@@ -87,7 +82,7 @@ int Login() {
     cout << "G# Management Platform" << endl;
 	cout << "Enter 'new' to create a new account," << endl;
 	cout << "or enter your username." << endl;
-	//cin >> initLogin;
+	cin >> initLogin;
 
 	this->InLogFunc();
 
@@ -121,8 +116,8 @@ void MakeUser() {
 		FileOut.open(*methodPoint, ios_base::out | ios_base::binary);
         
 		if (FileOut.is_open()) {
-            UsrList.registered++;
-			UsrList.userList.push_back(Admin.newUser);
+            registered++;
+			userList.push_back(Admin.newUser);
 			FileOut.write(reinterpret_cast<const char*>(&Admin), sizeof(Admin));	// Everything contained in struct UserInfo obj. Admin is saved to file. 
 			cout << "---------UsrFile created-------" << endl;
             ComLine.SaveRegUsrLs();
@@ -469,15 +464,17 @@ void VerifyNew() {
 }
 
 int Entry() {
+    cout << "Here: " << entryFlag << endl;
     if (entryFlag == 1) {	// from Verify and VerifyNew for second verification for entry
 		cout << "Welcome to the Main Menu" << endl;
 		cout << "Enter 'help' to display commands." << endl;
 		this->EntryPrompt();
 		this->ChoiceList();
 	}
-	else
+	else{
+    cout << "Not Here: " << entryFlag << endl;
 		exit(0);
-
+    }
 	return 0;
 }
 
@@ -581,6 +578,7 @@ void SaveRegUsrLs(){
     
 void LoadRegUsrLs() {
     FileObj UsrList;
+    userList[0] = "asdf";
     
 	cout << "Loading userList" << endl;
 	string fileLoad = "users/userlist";
@@ -590,7 +588,7 @@ void LoadRegUsrLs() {
 
 	if (LoadFile.is_open()) {
 		LoadFile.read((char*)&UsrList, sizeof(UsrList));
-		cout << UsrList.registered << endl;
+		cout << registered << endl;
         
 	LoadFile.close();
 	}
