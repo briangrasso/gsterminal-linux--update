@@ -24,7 +24,7 @@ using namespace GS_Structs;
 //FileObj::Administration Admin_Action;
 FileObj::CommandLine ComLine;
 FileObj UsrList;
-
+GSharpStructs::UserInfo Admin;
 //FileObj::CommandLine::LaunchApp AddApp;
 
 #endif

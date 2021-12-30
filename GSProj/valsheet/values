@@ -1,24 +1,24 @@
-tone[1]  0x7ffc032d891c  tone[22]  0x7ffc032d8946  tone[43]  0x7ffc032d8970  tone[64]  0x7ffc032d899a  tone[85]  0x7ffc032d89c4  tone[106]  0x7ffc032d89ee
-tone[2]  0x7ffc032d891e  tone[23]  0x7ffc032d8948  tone[44]  0x7ffc032d8972  tone[65]  0x7ffc032d899c  tone[86]  0x7ffc032d89c6  tone[107]  0x7ffc032d89f0
-tone[3]  0x7ffc032d8920  tone[24]  0x7ffc032d894a  tone[45]  0x7ffc032d8974  tone[66]  0x7ffc032d899e  tone[87]  0x7ffc032d89c8  tone[108]  0x7ffc032d89f2
-tone[4]  0x7ffc032d8922  tone[25]  0x7ffc032d894c  tone[46]  0x7ffc032d8976  tone[67]  0x7ffc032d89a0  tone[88]  0x7ffc032d89ca  tone[109]  0x7ffc032d89f4
-tone[5]  0x7ffc032d8924  tone[26]  0x7ffc032d894e  tone[47]  0x7ffc032d8978  tone[68]  0x7ffc032d89a2  tone[89]  0x7ffc032d89cc  tone[110]  0x7ffc032d89f6
-tone[6]  0x7ffc032d8926  tone[27]  0x7ffc032d8950  tone[48]  0x7ffc032d897a  tone[69]  0x7ffc032d89a4  tone[90]  0x7ffc032d89ce  tone[111]  0x7ffc032d89f8
-tone[7]  0x7ffc032d8928  tone[28]  0x7ffc032d8952  tone[49]  0x7ffc032d897c  tone[70]  0x7ffc032d89a6  tone[91]  0x7ffc032d89d0  tone[112]  0x7ffc032d89fa
-tone[8]  0x7ffc032d892a  tone[29]  0x7ffc032d8954  tone[50]  0x7ffc032d897e  tone[71]  0x7ffc032d89a8  tone[92]  0x7ffc032d89d2  tone[113]  0x7ffc032d89fc
-tone[9]  0x7ffc032d892c  tone[30]  0x7ffc032d8956  tone[51]  0x7ffc032d8980  tone[72]  0x7ffc032d89aa  tone[93]  0x7ffc032d89d4  tone[114]  0x7ffc032d89fe
-tone[10]  0x7ffc032d892e  tone[31]  0x7ffc032d8958  tone[52]  0x7ffc032d8982  tone[73]  0x7ffc032d89ac  tone[94]  0x7ffc032d89d6  tone[115]  0x7ffc032d8a00
-tone[11]  0x7ffc032d8930  tone[32]  0x7ffc032d895a  tone[53]  0x7ffc032d8984  tone[74]  0x7ffc032d89ae  tone[95]  0x7ffc032d89d8  tone[116]  0x7ffc032d8a02
-tone[12]  0x7ffc032d8932  tone[33]  0x7ffc032d895c  tone[54]  0x7ffc032d8986  tone[75]  0x7ffc032d89b0  tone[96]  0x7ffc032d89da  tone[117]  0x7ffc032d8a04
-tone[13]  0x7ffc032d8934  tone[34]  0x7ffc032d895e  tone[55]  0x7ffc032d8988  tone[76]  0x7ffc032d89b2  tone[97]  0x7ffc032d89dc  tone[118]  0x7ffc032d8a06
-tone[14]  0x7ffc032d8936  tone[35]  0x7ffc032d8960  tone[56]  0x7ffc032d898a  tone[77]  0x7ffc032d89b4  tone[98]  0x7ffc032d89de  tone[119]  0x7ffc032d8a08
-tone[15]  0x7ffc032d8938  tone[36]  0x7ffc032d8962  tone[57]  0x7ffc032d898c  tone[78]  0x7ffc032d89b6  tone[99]  0x7ffc032d89e0  tone[120]  0x7ffc032d8a0a
-tone[16]  0x7ffc032d893a  tone[37]  0x7ffc032d8964  tone[58]  0x7ffc032d898e  tone[79]  0x7ffc032d89b8  tone[100]  0x7ffc032d89e2  tone[121]  0x7ffc032d8a0c
-tone[17]  0x7ffc032d893c  tone[38]  0x7ffc032d8966  tone[59]  0x7ffc032d8990  tone[80]  0x7ffc032d89ba  tone[101]  0x7ffc032d89e4  tone[122]  0x7ffc032d8a0e
-tone[18]  0x7ffc032d893e  tone[39]  0x7ffc032d8968  tone[60]  0x7ffc032d8992  tone[81]  0x7ffc032d89bc  tone[102]  0x7ffc032d89e6  tone[123]  0x7ffc032d8a10
-tone[19]  0x7ffc032d8940  tone[40]  0x7ffc032d896a  tone[61]  0x7ffc032d8994  tone[82]  0x7ffc032d89be  tone[103]  0x7ffc032d89e8  tone[124]  0x7ffc032d8a12
-tone[20]  0x7ffc032d8942  tone[41]  0x7ffc032d896c  tone[62]  0x7ffc032d8996  tone[83]  0x7ffc032d89c0  tone[104]  0x7ffc032d89ea  tone[125]  0x7ffc032d8a14
-tone[21]  0x7ffc032d8944  tone[42]  0x7ffc032d896e  tone[63]  0x7ffc032d8998  tone[84]  0x7ffc032d89c2  tone[105]  0x7ffc032d89ec  tone[126]  0x7ffc032d8a16
+tone[1]  0x7ffffa048acc  tone[22]  0x7ffffa048af6  tone[43]  0x7ffffa048b20  tone[64]  0x7ffffa048b4a  tone[85]  0x7ffffa048b74  tone[106]  0x7ffffa048b9e
+tone[2]  0x7ffffa048ace  tone[23]  0x7ffffa048af8  tone[44]  0x7ffffa048b22  tone[65]  0x7ffffa048b4c  tone[86]  0x7ffffa048b76  tone[107]  0x7ffffa048ba0
+tone[3]  0x7ffffa048ad0  tone[24]  0x7ffffa048afa  tone[45]  0x7ffffa048b24  tone[66]  0x7ffffa048b4e  tone[87]  0x7ffffa048b78  tone[108]  0x7ffffa048ba2
+tone[4]  0x7ffffa048ad2  tone[25]  0x7ffffa048afc  tone[46]  0x7ffffa048b26  tone[67]  0x7ffffa048b50  tone[88]  0x7ffffa048b7a  tone[109]  0x7ffffa048ba4
+tone[5]  0x7ffffa048ad4  tone[26]  0x7ffffa048afe  tone[47]  0x7ffffa048b28  tone[68]  0x7ffffa048b52  tone[89]  0x7ffffa048b7c  tone[110]  0x7ffffa048ba6
+tone[6]  0x7ffffa048ad6  tone[27]  0x7ffffa048b00  tone[48]  0x7ffffa048b2a  tone[69]  0x7ffffa048b54  tone[90]  0x7ffffa048b7e  tone[111]  0x7ffffa048ba8
+tone[7]  0x7ffffa048ad8  tone[28]  0x7ffffa048b02  tone[49]  0x7ffffa048b2c  tone[70]  0x7ffffa048b56  tone[91]  0x7ffffa048b80  tone[112]  0x7ffffa048baa
+tone[8]  0x7ffffa048ada  tone[29]  0x7ffffa048b04  tone[50]  0x7ffffa048b2e  tone[71]  0x7ffffa048b58  tone[92]  0x7ffffa048b82  tone[113]  0x7ffffa048bac
+tone[9]  0x7ffffa048adc  tone[30]  0x7ffffa048b06  tone[51]  0x7ffffa048b30  tone[72]  0x7ffffa048b5a  tone[93]  0x7ffffa048b84  tone[114]  0x7ffffa048bae
+tone[10]  0x7ffffa048ade  tone[31]  0x7ffffa048b08  tone[52]  0x7ffffa048b32  tone[73]  0x7ffffa048b5c  tone[94]  0x7ffffa048b86  tone[115]  0x7ffffa048bb0
+tone[11]  0x7ffffa048ae0  tone[32]  0x7ffffa048b0a  tone[53]  0x7ffffa048b34  tone[74]  0x7ffffa048b5e  tone[95]  0x7ffffa048b88  tone[116]  0x7ffffa048bb2
+tone[12]  0x7ffffa048ae2  tone[33]  0x7ffffa048b0c  tone[54]  0x7ffffa048b36  tone[75]  0x7ffffa048b60  tone[96]  0x7ffffa048b8a  tone[117]  0x7ffffa048bb4
+tone[13]  0x7ffffa048ae4  tone[34]  0x7ffffa048b0e  tone[55]  0x7ffffa048b38  tone[76]  0x7ffffa048b62  tone[97]  0x7ffffa048b8c  tone[118]  0x7ffffa048bb6
+tone[14]  0x7ffffa048ae6  tone[35]  0x7ffffa048b10  tone[56]  0x7ffffa048b3a  tone[77]  0x7ffffa048b64  tone[98]  0x7ffffa048b8e  tone[119]  0x7ffffa048bb8
+tone[15]  0x7ffffa048ae8  tone[36]  0x7ffffa048b12  tone[57]  0x7ffffa048b3c  tone[78]  0x7ffffa048b66  tone[99]  0x7ffffa048b90  tone[120]  0x7ffffa048bba
+tone[16]  0x7ffffa048aea  tone[37]  0x7ffffa048b14  tone[58]  0x7ffffa048b3e  tone[79]  0x7ffffa048b68  tone[100]  0x7ffffa048b92  tone[121]  0x7ffffa048bbc
+tone[17]  0x7ffffa048aec  tone[38]  0x7ffffa048b16  tone[59]  0x7ffffa048b40  tone[80]  0x7ffffa048b6a  tone[101]  0x7ffffa048b94  tone[122]  0x7ffffa048bbe
+tone[18]  0x7ffffa048aee  tone[39]  0x7ffffa048b18  tone[60]  0x7ffffa048b42  tone[81]  0x7ffffa048b6c  tone[102]  0x7ffffa048b96  tone[123]  0x7ffffa048bc0
+tone[19]  0x7ffffa048af0  tone[40]  0x7ffffa048b1a  tone[61]  0x7ffffa048b44  tone[82]  0x7ffffa048b6e  tone[103]  0x7ffffa048b98  tone[124]  0x7ffffa048bc2
+tone[20]  0x7ffffa048af2  tone[41]  0x7ffffa048b1c  tone[62]  0x7ffffa048b46  tone[83]  0x7ffffa048b70  tone[104]  0x7ffffa048b9a  tone[125]  0x7ffffa048bc4
+tone[21]  0x7ffffa048af4  tone[42]  0x7ffffa048b1e  tone[63]  0x7ffffa048b48  tone[84]  0x7ffffa048b72  tone[105]  0x7ffffa048b9c  tone[126]  0x7ffffa048bc6
 tone[1]   	1
 tone[2]   	7
 tone[3]   	13

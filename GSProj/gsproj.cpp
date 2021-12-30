@@ -7,8 +7,10 @@ int main(/*Consider making the command line the login where password and usernam
 	//MakeDir();
 
 	cout << "Enter Main" << endl;
-   	ComLine.LoadRegUsrLs();
+    
+    userList[0] = "asdf";
 
+    //ComLine.LoadRegUsrLs();
 	UsrList.Login();
 
 	if (registeredUser == 1)

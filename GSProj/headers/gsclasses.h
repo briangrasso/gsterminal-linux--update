@@ -6,7 +6,10 @@ using namespace std;
 using namespace GS_Structs;
 
 // must include global variables from .cpp
-    string initLogin;
+
+    // create a global variable and set it equal to the struct member 
+    
+    string initLogin = "\0";
     string userChoice = "\0";
     string* initLoginPoint = &initLogin;
     bool choiceFlag = 0;
@@ -16,11 +19,16 @@ using namespace GS_Structs;
     bool entryFlag = 0;
     int y = 0;
     string verification = "\0";
+    
     int totalCmds = 9;
-    vector<string> cmdList(totalCmds);
+    vector<string> cmdList(totalCmds);  // think log1 (z1)
     
     int registered = 1;    
-    vector<string> userList(registered);
+    vector<string> userList(registered);// think log2 (z2)
+    
+    string compareVerify;
+    
+    
     
 // build function prototypes using the global variables
 
@@ -68,7 +76,7 @@ int InLogFunc(){
 			}
 			else {
 				cout << "Username not found" << endl;
-				cout << "Enter username: ";
+				cout << "Enter username: " << endl;
 				cin >> initLogin;
 				InLogFunc();			// add limiter for number of repeats
 			}
@@ -91,20 +99,22 @@ int Login() {
     
 class Administration{
 public:
-void MakeUser() {
+void MakeUser(/*string passString*/) { // need to make prototype to pass Admin.newUser to struct before saving
+                    // to file, but otherwise need to pass value between function prototypes
+                       // as inline variables.
     FileObj UsrList;
     FileObj::CommandLine ComLine;
     GSharpStructs::UserInfo Admin;
 	
     cout << "Enter username: " << endl;
 	cin >> Admin.newUser;
-
-	if (Admin.newUser != "new") {
+    
+    if (Admin.newUser != "new") {
 		cout << "Enter password: " << endl;
 		cin >> Admin.newPassword;
 
 		stringstream converterStream;
-		converterStream << Admin.newUser;
+		converterStream << Admin.newUser; // Admin.newUser is a char*[10] type
 		string convertedString;     		// convert back to char convertedString[10] before passing to other method for list population???
 		converterStream >> convertedString;	// write method to create new user accounts from within active user session
 
@@ -116,11 +126,13 @@ void MakeUser() {
 		FileOut.open(*methodPoint, ios_base::out | ios_base::binary);
         
 		if (FileOut.is_open()) {
-            registered++;
-			userList.push_back(Admin.newUser);
-			FileOut.write(reinterpret_cast<const char*>(&Admin), sizeof(Admin));	// Everything contained in struct UserInfo obj. Admin is saved to file. 
+			userList.push_back(convertedString);
+            ++registered;
+			FileOut.write(reinterpret_cast<const char*>(&Admin), sizeof(Admin));	// Everything contained in struct UserInfo obj. Admin is saved to file 
+                                                                                        // AS CHAR POINTER!!! 
 			cout << "---------UsrFile created-------" << endl;
-            ComLine.SaveRegUsrLs();
+            ComLine.SaveRegUsrLs();// have here for when unable to reach end of session prog (exit) and for when creating new users from
+                                        // within program as Admin - create method
 			FileOut.close();
 		}
 		else
@@ -131,15 +143,16 @@ void MakeUser() {
 						// for conversion to html : write string conversion method to file (fd?); use PHP to harvest elements
 	}
 	else {
-		cout << "Please select different username" << endl;             // need to make check to prevent new user from writing over existing user: userList reloader
+		cout << "Please select different username" << endl;    // need to make check to prevent new user from writing over existing user: userList reloader
 		MakeUser();
 	}
+// return convertedString;
 }
 };
 
 class CommandLine{
 public:
-    GSharpStructs::UserInfo Admin;
+    // GSharpStructs::UserInfo Admin;
     
 class LaunchApp{
 public:
@@ -350,7 +363,7 @@ void EntryPrompt() {
 		cin >> userChoice;
 	}
 	else if (newUser == 1) {
-		cout << Admin.newUser << ": ";
+		cout << compareVerify << ": ";
 		cin >> userChoice;
 	}
 	else {
@@ -384,18 +397,19 @@ void Verify() {
 	if (UserFile.is_open()) {
 		cout << "File opened" << endl;
 
-		UserFile.read((char*)&GetUser, sizeof(GetUser));
+		UserFile.read((char*)&GetUser, sizeof(GetUser)); // Get values
 
 		stringstream convertInfo;
-		convertInfo << GetUser.newPassword;
-		string compareVerify;
+		convertInfo << GetUser.newPassword;       // convert values for comparison
+		
 		convertInfo >> compareVerify;
 
 		UserFile.close();
 
 		if (verification == compareVerify) {
-			cout << "Successful verification" << endl;
+			cout << "Successful verification" << endl;       // perform comparison
 			entryFlag = 1;
+            newUser = 0;
 		}
 		else {
 			cout << "Incorrect password." << endl;
@@ -409,13 +423,20 @@ void Verify() {
 
 }
     
-void VerifyNew() {
+void VerifyNew(/*char passNewUser[10]*/) {// return Admin.newUser in MakeUser() to VerifyNew() prototype
     GSharpStructs::UserInfo Admin;
-    // Set GlobalVar.registered User here to continue program due to Global values not passing
-    registeredUser = 1;
+    
+		stringstream convertNewUser;
+		convertNewUser << Admin.newUser; // Admin.newUser is a char*[10] type
+		string newUserString;     		// convert back to char convertedString[10] before passing to other method for list population???
+		convertNewUser >> newUserString;
+        
+        //Admin.newUser = passNewUser;
+        // need to make global variables to substitute values in prototypes 
+        
 	if (registeredUser == 1) {
 		cout << "Please enter your password: " << endl;
-		cout << Admin.newUser << ": ";    // Admin.newUser not passing////////////////////
+		cout << newUserString << ": ";    // Admin.newUser not passing////////////////////
 		cin >> verification;
 
 		stringstream thisConverter;
@@ -445,8 +466,8 @@ void VerifyNew() {
 				cout << "File read in VerifyNew" << endl;
 				UserFile.close();
 				entryFlag = 1;
-			}
-			else {
+                newUser = 1;
+			}else {
 				cout << "Wrong password" << endl;
 				VerifyNew();	// Set limiter with while loop to return to login, and create method to prevent
 						// repeated creation of accounts after failed login attempt -- need method for controlling 
@@ -464,17 +485,14 @@ void VerifyNew() {
 }
 
 int Entry() {
-    cout << "Here: " << entryFlag << endl;
     if (entryFlag == 1) {	// from Verify and VerifyNew for second verification for entry
 		cout << "Welcome to the Main Menu" << endl;
 		cout << "Enter 'help' to display commands." << endl;
 		this->EntryPrompt();
 		this->ChoiceList();
-	}
-	else{
-    cout << "Not Here: " << entryFlag << endl;
+	}else
 		exit(0);
-    }
+        
 	return 0;
 }
 
@@ -557,7 +575,7 @@ FileObj::CommandLine::LaunchApp AddApp;
 
     
 void SaveRegUsrLs(){
-    FileObj UsrList;
+    //FileObj UsrList;
     
 	cout << "Saving userList" << endl;
 
@@ -566,8 +584,10 @@ void SaveRegUsrLs(){
 
 	ofstream ULIST(*pathUsrLs, ios_base::out | ios_base::binary);
 
-	if (ULIST.is_open()) {
-		ULIST.write(reinterpret_cast<const char*>(&UsrList), sizeof(UsrList));
+	if (ULIST.is_open()) { // all of FileObj is being saved 
+    // include registered
+        ULIST.write(reinterpret_cast<const char*>(&registered), sizeof(registered));
+		ULIST.write(reinterpret_cast<const char*>(&userList), sizeof(userList)); // Changed from UsrList and in LoadRegUsrLs()
 		cout << "Saved UsrList to file" << endl;
 		ULIST.close();
 	}
@@ -578,17 +598,17 @@ void SaveRegUsrLs(){
     
 void LoadRegUsrLs() {
     FileObj UsrList;
-    userList[0] = "asdf";
     
 	cout << "Loading userList" << endl;
 	string fileLoad = "users/userlist";
 	string* openLoader = &fileLoad;
 
 	ifstream LoadFile(*openLoader, ios_base::in | ios_base::binary);
-
+    
 	if (LoadFile.is_open()) {
-		LoadFile.read((char*)&UsrList, sizeof(UsrList));
-		cout << registered << endl;
+        // registered is being saved and is updating after each MakeUser()!!!!!!!!
+        LoadFile.read((char*)&registered, sizeof(registered));
+		LoadFile.read((char*)&userList, sizeof(userList)); 
         
 	LoadFile.close();
 	}
