@@ -118,7 +118,11 @@ struct ToneTable {
 		short int resh = fretBoard[1][8] + fretBoard[3][8] + fretBoard[4][9] + fretBoard[5][11];
 		short int shin = fretBoard[0][6] + fretBoard[1][6] + fretBoard[2][8] + fretBoard[3][6] + fretBoard[4][8] + fretBoard[5][9];
 		short int tav = fretBoard[0][6] + fretBoard[1][8] + fretBoard[2][8] + fretBoard[3][6] + fretBoard[4][6] + fretBoard[5][8];
-
+// I have them as a location [x][y], a name, and value.
+// I can access groups of them and change the values by key.
+// I need to create a method for outputting all the values for each key 0-20; I need to create method for altering the locations
+            // extending from the nut to the bell opening, and for looping back/restarting at fret 12;
+// I need to create method to group the tones by string and fret 
 		/*
 		unsigned short int fretBoard[6][21] =		// ex. ToneTable GS; cout << GS.MakeRegisters.fretBoard[x][y];
 		{ {GS.EO1, GS.FO1, GS.FS1, GS.GO2, GS.GS2, GS.AO3, GS.Bf3, GS.BO4, GS.CO4, GS.Df4, GS.DO5, GS.Ef5, GS.EO7, GS.FO7, GS.FS7, GS.GO8, GS.GS8, \
@@ -134,7 +138,7 @@ struct ToneTable {
 		//}
 		*/
 	//};
-    
+    // Aleph is the key for all that is contained.
     
 };
 

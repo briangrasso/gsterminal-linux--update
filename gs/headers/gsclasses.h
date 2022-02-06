@@ -28,6 +28,21 @@ using namespace GS_Structs;
     
     string compareVerify;
     
+    wchar_t AlephBet[22] = { L'א', L'ב', L'ג', L'ד', L'ה', L'ו', L'ז', L'ח', L'ט', L'י', L'כ', L'ל', \
+							L'מ', L'נ', L'ס', L'ע', L'פ', L'צ', L'ק', L'ר', L'ש', L'ת' };
+    
+    string RevLiterals[22] = {"ת", "ש", "ר", "ק" ,"צ", "פ", "ע", "ס", "נ", "מ", "ל", "כ", "י", "ט", "ח", "ז", "ו", "ה", "ד", "ג", "ב","א"};
+   
+    string Literals[22] = {"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ", "ק", "ר", "ש", "ת"};
+
+	GSharpStructs::ToneTable GS;// make a list of every class instantiation, and their attributes
+    const vector<int> letterArray{ GS.aleph, GS.bet, GS.gimmel, GS.dalet, GS.heh, GS.vav, GS.zayin, GS.chet, GS.tet, GS.yod,\
+    GS.kaf, GS.lamed, GS.mem, GS.nun, GS.samech, GS.ayin, GS.pe, GS.tzade, GS.qoph, GS.resh, GS.shin, GS.tav };
+	
+    const vector<string> letterWords{ "Aleph", "Bet", "Gimmel", "Dalet", "Heh", "Vav", "Zayin", "Chet", "Tet", "Yod", "Kaf", "Lamed", "Mem", "Nun", \
+		"Samech", "Ayin", "Pe", "Tzade", "Qoph", "Resh", "Shin", "Tav" };
+
+    
     
     
 // build function prototypes using the global variables
@@ -218,21 +233,22 @@ int HebrewConsole() {
 }
 
 int Core() {
+// I don't have to run core to access ToneTable members
+// need to move
 
+// Core constructs a memory location for each letter by its Enlish name. It can be made to return any value of any type (it's a 2-byte memory location: half
+    //an eigth of a modulo remainder post computation)(It's a framed shared-object capable of being inserted, removed, altered, and transmitted anywhere!!!)
+        //I will run initially, and record the memory locations hex value for access upon subsequent runs. This is dedicated RAM to give preference to the
+            //operating software at the lowest levels and partition (security) the run-generated values being processed, 
+                //and seperate those locations from use (preserve - carbon footprint)
+                    //so they cannot be accessed by other services (red security detail in system drawing - Facebook)
 	cout << "Core" << endl;
 
-	wchar_t AlephBet[22] = { L'א', L'ב', L'ג', L'ד', L'ה', L'ו', L'ז', L'ח', L'ט', L'י', L'כ', L'ל', \
-							L'מ', L'נ', L'ס', L'ע', L'פ', L'צ', L'ק', L'ר', L'ש', L'ת' };
-        
-GSharpStructs::ToneTable GS;
+//	GSharpStructs::ToneTable GS;
 FileObj::CommandLine::LaunchApp AddApp;
 
-	short int* pointer = &GS.aleph;
-	const vector<int> letterArray{ GS.aleph, GS.bet, GS.gimmel, GS.dalet, GS.heh, GS.vav, GS.zayin, GS.chet, GS.tet, GS.yod, GS.kaf, GS.lamed, \
-		GS.mem, GS.nun, GS.samech, GS.ayin, GS.pe, GS.tzade, GS.qoph, GS.resh, GS.shin, GS.tav };
-	const vector<string> letterWords{ "Aleph", "Bet", "Gimmel", "Dalet", "Heh", "Vav", "Zayin", "Chet", "Tet", "Yod", "Kaf", "Lamed", "Mem", "Nun", \
-		"Samech", "Ayin", "Pe", "Tzade", "Qoph", "Resh", "Shin", "Tav" };
-	for (int w = 0; w < 22; ++w) {
+	short int* pointer = &GS.aleph;    // Returning the value
+		for (int w = 0; w < 22; ++w) {
 		cout << letterWords[w] << " is at:\t" << &letterArray[w] << "\tand it contains:\t" << letterArray[w] << endl;
 	}
 
@@ -252,7 +268,7 @@ FileObj::CommandLine::LaunchApp AddApp;
 	return 0;
 }
 
-int GetValues(int forKey) {
+int GetValues(int forKey) { 
 using namespace GS_Structs;
 
 	GSharpStructs::ToneTable Core;
@@ -575,7 +591,7 @@ FileObj::CommandLine::LaunchApp AddApp;
 
     
 void SaveRegUsrLs(){
-    //FileObj UsrList;
+    FileObj UsrList;
     
 	cout << "Saving userList" << endl;
 
